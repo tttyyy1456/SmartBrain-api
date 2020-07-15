@@ -36,7 +36,7 @@ app.get('/profile/:id', (req,res) => {profile.handleProfileGet(req,res,db)})
 app.put('/image', (req,res) => {image.handleImagePut(req,res,db)})
 app.post('/imageURL', (req,res) => {image.handleApiCall(req,res,db)})
 
-app.listen(8080, ()=>{
-	console.log('App is running on port 8080')
+app.listen(procces.env.PORT || 8080, ()=>{
+	console.log(`App is running on port ${procces.env.PORT}`)
 })
 
