@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
@@ -12,17 +11,17 @@ const db = knex({
 	client: 'pg',
 	connection: {
 		connectionString: process.env.DATABASE_URL,
-		ssl: true
+		ssl: true,
 	}
 });
 
 
+const app = express();
 
 
-
-app.use(express.json());
 
 app.use(cors())
+app.use(express.json());
 
 app.get('/',(req,res)=>{ res.send('it is working')})
 
